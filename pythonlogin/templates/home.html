@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Home Page</h2>
+<p>Welcome back, {{ username }}!</p>
+
+{% if username != 'brice' %}
+    <div style="margin-top: 20px;">
+        <h3>Administrator Access</h3>
+        <p>If you are the administrator, please <a href="{{ url_for('admin_login') }}">login here</a>.</p>
+    </div>
+{% endif %}
+{% endblock %}

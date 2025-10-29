@@ -1,0 +1,320 @@
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #435165, #2f3a50);
+    min-height: 100vh;
+}
+
+
+.login, .register {
+    width: 420px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 100px auto;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.login h1, .register h1 {
+    text-align: center;
+    color: #435165;
+    font-size: 26px;
+    padding: 25px 0;
+    border-bottom: 1px solid #dee0e4;
+    margin: 0;
+}
+
+.login .links, .register .links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #f7f8fb;
+    padding: 15px 0;
+}
+
+.login .links a, .register .links a {
+    color: #7b8291;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.login .links a.active, .register .links a.active {
+    color: #435165;
+}
+
+.login .links a.active::after, .register .links a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+    background: #435165;
+    border-radius: 2px;
+}
+
+.login form, .register form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 25px;
+}
+
+.login form label, .register form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #3274d6;
+    color: #fff;
+    border-radius: 8px 0 0 8px;
+}
+
+.login form input[type="text"],
+.login form input[type="password"],
+.login form input[type="email"],
+.register form input[type="text"],
+.register form input[type="password"],
+.register form input[type="email"] {
+    width: 320px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    padding: 0 15px;
+    outline: none;
+    border-radius: 0 8px 8px 0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login form input:focus,
+.register form input:focus {
+    border-color: #3274d6;
+    box-shadow: 0 0 6px rgba(50, 116, 214, 0.3);
+}
+
+.login form input[type="submit"],
+.register form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.login form input[type="submit"]:hover,
+.register form input[type="submit"]:hover {
+    background-color: #285fc4;
+}
+
+.msg {
+    text-align: center;
+    color: red;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.navtop {
+    height: 60px;
+    width: 100%;
+    background-color: #435165;
+    border-bottom: 2px solid #2f3a50;
+}
+
+.navtop div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.navtop div h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #eaebed;
+    font-weight: 600;
+}
+
+.navtop div a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #c1c4c8;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navtop div a i {
+    margin-right: 8px;
+}
+
+.navtop div a:hover {
+    color: #ffffff;
+}
+
+body.loggedin {
+    background-color: #f3f4f7;
+}
+
+.content {
+    width: 1000px;
+    margin: 20px auto;
+    padding-bottom: 30px;
+}
+
+.content h2 {
+    margin: 0;
+    padding: 25px 0;
+    font-size: 22px;
+    border-bottom: 1px solid #e0e0e3;
+    color: #435165;
+    font-weight: 600;
+}
+
+.content > p, .content > div {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin: 25px 0;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.content .welcome-box {
+    text-align: center;
+    background: linear-gradient(135deg, #3274d6, #435165);
+    color: #fff;
+    border-radius: 10px;
+    padding: 40px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 20px rgba(67, 81, 101, 0.3);
+}
+
+/* Tables */
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.content table td {
+    padding: 8px 10px;
+}
+
+.content table td:first-child {
+    font-weight: bold;
+    color: #4a536e;
+    width: 180px;
+}
+
+/* ================================
+   Admin Dashboard Styling
+=================================== */
+.admin-dashboard {
+    background: #fff;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.admin-dashboard h2 {
+    text-align: center;
+    color: #ff7b00;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ff7b00;
+    padding-bottom: 10px;
+}
+
+.admin-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-dashboard table th {
+    background-color: #ff7b00;
+    color: white;
+    text-align: left;
+    padding: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.admin-dashboard table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.admin-dashboard table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-dashboard table tr:hover {
+    background-color: #f1f1f1;
+    transition: 0.2s;
+}
+
+/* Buttons inside dashboard */
+.admin-dashboard .btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-edit {
+    background-color: #3274d6;
+    color: #fff;
+}
+
+.btn-edit:hover {
+    background-color: #285fc4;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+/* Info message */
+.admin-dashboard .info {
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-left: 5px solid #3274d6;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
